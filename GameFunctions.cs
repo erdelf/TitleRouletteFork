@@ -10,7 +10,7 @@ internal sealed class GameFunctions
 #pragma warning disable CS0649
     private delegate byte ExecuteCommandDelegate(int id, int titleId, uint unk1, int unk2, int unk3);
 
-    [Signature("E8 ?? ?? ?? ?? 8D 43 0A")]
+    [Signature("E8 ?? ?? ?? ?? 8D 46 0A")]
     private ExecuteCommandDelegate _executeCommand;
 
 #pragma warning restore CS0649

@@ -2,4 +2,7 @@
     <PropertyGroup>
         <Version>4.1</Version>
     </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Update="DalamudPackager" Version="11.0.0" />
+    </ItemGroup>
 </Project>

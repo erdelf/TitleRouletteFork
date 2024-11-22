@@ -49,16 +49,16 @@ public sealed class Plugin : IDalamudPlugin
             IsPrefix = true
         });
 
-        foreach (var title in Service.DataManager.GetExcelSheet<Lumina.Excel.GeneratedSheets.Title>()!)
+        foreach (var title in Service.DataManager.GetExcelSheet<Lumina.Excel.Sheets.Title>()!)
         {
-            if (string.IsNullOrEmpty(title.Masculine) || string.IsNullOrEmpty(title.Feminine))
+            if (string.IsNullOrEmpty(title.Masculine.ExtractText()) || string.IsNullOrEmpty(title.Feminine.ExtractText()))
                 continue;
 
             Service.Titles.Add((ushort)title.RowId, new Title
             {
                 Id = (ushort)title.RowId,
-                MasculineName = title.Masculine,
-                FeminineName = title.Feminine,
+                MasculineName = title.Masculine.ExtractText(),
+                FeminineName = title.Feminine.ExtractText(),
                 IsPrefix = title.IsPrefix
             });
         }
